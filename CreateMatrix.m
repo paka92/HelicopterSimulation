@@ -1,12 +1,16 @@
+% Select r
+R = 3;
+% Select j as k, because j is a reserved variable
+K = 3;
 
-skew = 1.0;
-M = zeros(3);
-
-for k = 0:1:2
-    M(k+1,k+1) = MFunc(k,k);
+syms psi
+total = 0;
+[Phi,A,B] = addSymbolicMatrixFunc();
+for r = 0:1:R
+for k = (r+1):2:(K+1)
+    
+    total = total + Phi(r+1,k+1)*( (A(r+1,k+1) * cos(r*psi)) + B(r+1,k+1) * sin(r*psi) );   
+    
 end
-M
-
-
-
-
+end
+total
