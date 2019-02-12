@@ -1,4 +1,4 @@
-function [outputArg] = GamaFunc(r,m,j,n)
+function [outputArg] = GamaFunc(r,j,m,n)
 % Gama Function
 
 % Condition (i)
