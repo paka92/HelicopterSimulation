@@ -1,10 +1,5 @@
-% Select r
-R = 8;
+function[states] = CreateMatrixNumeric(R,K)
 % Select j as k, because j is a reserved variable
-K = 8;
-syms psi
-total = 0;
-[Phi,A,B] = addSymbolicMatrixFunc();
 
 %indexing state subscripts
 index = 1;
@@ -17,6 +12,4 @@ for k = (r+1):2:(K+1)
 end
 end
 
-for t=1:1:index-1
-    disp(states{t}); 
 end
