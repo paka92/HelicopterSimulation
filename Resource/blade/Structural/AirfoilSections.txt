@@ -1,0 +1,8 @@
+# Part II : Enter different airfoil sections with their respective ending location in nondimensional form.
+# Such that '1	0.4' means: 'Section 1 starts from blade root and ends at 0.4*R.
+# Note that the last section's end location must be 1.0.
+# Section Number , End Location
+1	0.1
+2	0.4
+3	0.6
+4	1.0
