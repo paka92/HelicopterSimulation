@@ -1,13 +1,13 @@
-function [elementsChord] = readChord(elementsMidPoint)
+function [elementsTwist] = readTwist(elementsMidPoint)
 % Returns chord length at each element station.
 % Read File
-chordFile =fopen('..\..\Resource\Blade\Structural\Chord.txt','r');
-readText = textscan(chordFile,'%f %f',-1,'CommentStyle','#');
-fclose(chordFile);
+twistFile =fopen('..\..\Resource\Blade\Structural\Twist.txt','r');
+readText = textscan(twistFile,'%f %f',-1,'CommentStyle','#');
+fclose(twistFile);
 
 % Write text into readable variables
 stationNonDim = readText{1};
-stationChordNonDim = readText{2};
+stationTwistNonDim = readText{2};
 
 % Initialize a vector that is a copy of elementMidPoints.
 % Then limits its upper and lower bound wrt chord table.
@@ -22,7 +22,6 @@ for k = 1:1:length(elementsMidPoint)
     
 end
 
-elementsChord = interp1(stationNonDim,stationChordNonDim,chordLimitedElementMidPoints);
-
+elementsTwist = interp1(stationNonDim,stationTwistNonDim,chordLimitedElementMidPoints);
 end
 

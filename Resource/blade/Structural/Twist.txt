@@ -1,0 +1,11 @@
+# Part III: Enter Twist at different stations in radians.(at each station twist is calculated as rotation from the root)
+# Negative value indicates a decreased angle of attack from rotation plane
+# Linear interpolation will be used for given intervals. If last location is not 1, then after last station  ...
+# ...twist will be kept constant.
+# Always start at root with 0.0 twist. 
+# Station r, twist (rad)
+0.01	0.0
+0.20	0.10
+0.47	0.14
+0.76	0.11
+1.00	0.21
