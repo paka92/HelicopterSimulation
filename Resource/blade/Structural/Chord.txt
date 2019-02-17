@@ -1,0 +1,7 @@
+# Part III: Enter Chord Lengths at different stations nondimensionalizing with R.
+# Linear interpolation will be used for given intervals. If last location is not 1, then after last station  ...
+# ...chord will be kept constant.
+# Station r, chord (c/R)
+0.01	0.1
+0.4	0.15
+1.0	0.08
