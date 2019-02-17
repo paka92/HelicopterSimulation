@@ -1,4 +1,4 @@
-function [elementChord] = readChord(elementNumber,HingeOffsetNonDim)
+function [elementsChord] = readChord(elementsMidPoint)
 % Returns chord length at each element station.
 % Read File
 chordFile =fopen('..\..\Resource\Blade\Structural\chord.txt','r');
@@ -9,16 +9,20 @@ fclose(chordFile);
 stationNonDim = readText{1};
 stationChordNonDim = readText{2};
 
-% Limit Inputs.
-if(CurrentStation <= stationNonDim(1))
-    tableInput = stationNonDim(1);
-elseif(CurrentStation >= stationNonDim(end))
-    tableInput = stationNonDim(end);
-else
-    tableInput = CurrentStation;
+% Initialize a vector that is a copy of elementMidPoints.
+% Then limits its upper and lower bound wrt chord table.
+chordLimitedElementMidPoints = elementsMidPoint;
+for k = 1:1:length(elementsMidPoint)
+   
+    if(elementsMidPoint(k)<= stationNonDim(1))
+        chordLimitedElementMidPoints(k) = stationNonDim(1);
+    elseif(elementsMidPoint(k) >= stationNonDim(end))
+        chordLimitedElementMidPoints(k) = stationNonDim(end);
+    end
+    
 end
 
-aaa = interp1(stationNonDim,stationChordNonDim,tableInput)
+elementsChord = interp1(stationNonDim,stationChordNonDim,chordLimitedElementMidPoints);
 
 end
 
