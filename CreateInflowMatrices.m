@@ -1,8 +1,9 @@
+function[cosStates,Mcos,Lcos,GamaCos,sinStates,Msin,Lsin,GamaSin] = CreateInflowMatrices(r,k)
 % Enter R and J to CreateMatrixNumeric function
 % It will create the [superscript,subscript] values for each states in
 % cosStates and sinStates cell array.
 
-[cosStates,sinStates] = CreateMatrixNumeric(3,3);
+[cosStates,sinStates] = CreateMatrixNumeric(r,k);
 %Get State Numbers
 countCosStates = length(cosStates);
 countSinStates = length(sinStates);
@@ -37,7 +38,6 @@ for ii = 1:1:countSinStates
     
 end
 
-
 % for ii = 1:1:length(c)
 %     disp(c{ii});
 % end
@@ -45,3 +45,5 @@ end
 % for ii = 1:1:length(s)
 %     disp(s{ii});
 % end
+end
+
