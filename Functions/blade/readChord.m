@@ -1,7 +1,7 @@
 function [elementsChord] = readChord(elementsMidPoint)
 % Returns chord length at each element station.
 % Read File
-chordFile =fopen('..\..\Resource\Blade\Structural\Chord.txt','r');
+chordFile =fopen('Resource\Blade\Structural\Chord.txt','r');
 readText = textscan(chordFile,'%f %f',-1,'CommentStyle','#');
 fclose(chordFile);
 

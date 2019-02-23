@@ -1,7 +1,7 @@
 function [stationMidPoints] = readElementNumber(HingeOffset)
 % Read the element Number for blade element theory
 % Note that HingeOffset must be nondimensonal by R.
-elemNoFile = fopen('..\..\Resource\Blade\Aerodynamic\NumberOfBladeElements.txt','r');
+elemNoFile = fopen('Resource\Blade\Aerodynamic\NumberOfBladeElements.txt','r');
 readText = textscan(elemNoFile,'%f ',-1,'CommentStyle','#');
 fclose(elemNoFile);
 

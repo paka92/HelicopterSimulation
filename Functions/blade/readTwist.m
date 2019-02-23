@@ -1,7 +1,7 @@
 function [elementsTwist] = readTwist(elementsMidPoint)
 % Returns chord length at each element station.
 % Read File
-twistFile =fopen('..\..\Resource\Blade\Structural\Twist.txt','r');
+twistFile =fopen('Resource\Blade\Structural\Twist.txt','r');
 readText = textscan(twistFile,'%f %f',-1,'CommentStyle','#');
 fclose(twistFile);
 
