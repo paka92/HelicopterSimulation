@@ -1,7 +1,7 @@
-function [alphaCL, machCL, tableCL] = readCLTable()
-%READCLTABLE Summary of this function goes here
-%   Detailed explanation goes here
-curveFile =fopen('Resource\Blade\Aerodynamic\LiftCurve.txt','r');
+function [alphaCD,machCD,tableCD] = readCDTable()
+%READCDTABLE Summary of this function goes here
+%Detailed explanation goes here
+curveFile =fopen('Resource\Blade\Aerodynamic\DragCurve.txt','r');
 readText = textscan(curveFile,'%f',-1,'CommentStyle','#');
 fclose(curveFile);
 AllData = readText{1}; % Cast from cell to vector.
@@ -28,12 +28,12 @@ for tt = 1:1:alphaBreakpointNumber
 end
 
 % Read all table data
-CLTable = zeros(alphaBreakpointNumber,MachBreakpointNumber);
+CDTable = zeros(alphaBreakpointNumber,MachBreakpointNumber);
 % Iterate over whole table
 for jj = 1:1:MachBreakpointNumber
     for kk = 1:1:alphaBreakpointNumber
         readRow = readRow + 1;
-        CLTable(kk,jj) = AllData(readRow);
+        CDTable(kk,jj) = AllData(readRow);
     end
 end
 
@@ -44,10 +44,8 @@ if(length(AllData) ~= readRow)
 end
 
 % Assign outputs
-alphaCL = alphaBreakpoints;
- machCL = MachBreakpoints;
-tableCL = CLTable;
+alphaCD = alphaBreakpoints;
+ machCD = MachBreakpoints;
+tableCD = CDTable;
 end
-
-
 
