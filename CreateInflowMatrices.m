@@ -1,4 +1,4 @@
-function[stateCount,Mcos,invLc,Msin,invLs] = CreateInflowMatrices(r,k,SkewAngleRad)
+function[stateCount,cosStates,sinStates,Mcos,invLc,Msin,invLs] = CreateInflowMatrices(r,k,SkewAngleRad)
 % Enter R and J to CreateMatrixNumeric function
 % It will create the [superscript,subscript] values for each states in
 % cosStates and sinStates cell array.
