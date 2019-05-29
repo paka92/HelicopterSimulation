@@ -1,9 +1,11 @@
 function [alphaCD,machCD,tableCD] = readCDTable()
 %READCDTABLE Summary of this function goes here
 %Detailed explanation goes here
+
 curveFile =fopen('Resource\Blade\Aerodynamic\DragCurve.txt','r');
 readText = textscan(curveFile,'%f',-1,'CommentStyle','#');
 fclose(curveFile);
+
 AllData = readText{1}; % Cast from cell to vector.
 readRow = 1; % initialized
 % Read Mach Breakpoint number

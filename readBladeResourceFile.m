@@ -1,6 +1,6 @@
-clear all;
+%clear all;
 %Read 'blade resource' file to configure helicopter blade parameters
-tic;
+
 % i.  Get HingeOffset[Non Dimensional by R]
 HingeOffset = readHingeOffset();
 
@@ -16,6 +16,5 @@ elementsTwist = readTwist(elementsMidPoint);
 % iv. Read CL-CD 2D Tables
 [ClTableLeft,ClTableTop,ClTable] = readCLTable();
 [CdTableLeft,CdTableTop,CdTable] = readCDTable();
-toc;
 
 
