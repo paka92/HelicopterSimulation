@@ -1,9 +1,9 @@
-function [outputValue] = interpol2d(LeftInput,TopInput,LeftBreakpoints,TopBreakpoints,T)
+function [outputValue] = lookup2d(LeftInput,TopInput,LeftBreakpoints,TopBreakpoints,T)
 %INTERPOL2D Summary of this function goes here
 %   Detailed explanation goes here
 sizeLeft = length(LeftBreakpoints);
 sizeTop  = length(TopBreakpoints);
-outputValue = 0.0;
+
 %Find Left and Top Index 
 [~,LeftIndex] = histc(LeftInput,LeftBreakpoints);
 [~,TopIndex]  = histc(TopInput, TopBreakpoints);
